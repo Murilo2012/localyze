@@ -90,7 +90,7 @@
     });
   }
 
-  // ---------- mensagem por e-mail (direto pelo site, via FormSubmit) ----------
+  // ---------- mensagem por e-mail (direto pelo site, via Web3Forms) ----------
   var botaoEmail = document.querySelector('.botao--email');
   var formEmail = document.getElementById('form-email');
   if (botaoEmail && formEmail && window.fetch) {
@@ -106,30 +106,54 @@
 
     var status = document.getElementById('e-status');
     var enviar = document.getElementById('e-enviar');
+    // celular: abre o app de e-mail (Gmail, Mail…) já com a mensagem; computador: abre o Gmail no navegador
+    var ehCelular = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    var linkEmail = function (assunto, corpo) {
+      if (ehCelular) {
+        return 'mailto:murilok.andrade@gmail.com?subject=' + encodeURIComponent(assunto) + '&body=' + encodeURIComponent(corpo);
+      }
+      return 'https://mail.google.com/mail/?view=cm&fs=1&to=murilok.andrade@gmail.com' +
+        '&su=' + encodeURIComponent(assunto) + '&body=' + encodeURIComponent(corpo);
+    };
+
     formEmail.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      var dados = {};
-      new FormData(formEmail).forEach(function (v, k) { dados[k] = v; });
-      if (dados._honey) return; // robô de spam
-      status.className = 'form-email__status';
-      status.textContent = 'Enviando…';
-      enviar.disabled = true;
-      // se o envio direto falhar, a mesma mensagem segue pelo WhatsApp ou pelo Gmail
-      var texto = 'Olá, Localyze!\n\nNome: ' + dados.nome + '\nContato: ' + dados.contato + '\n\n' + dados.mensagem;
+      if (formEmail.querySelector('[name="botcheck"]').checked) return; // robô de spam
+      var nome = document.getElementById('e-nome').value.trim();
+      var contato = document.getElementById('e-contato').value.trim();
+      var mensagem = document.getElementById('e-msg').value.trim();
+      var chave = document.getElementById('e-chave').value.trim();
+      var texto = 'Olá, Localyze!\n\nNome: ' + nome + '\nContato: ' + contato + '\n\n' + mensagem;
+
+      // se o envio direto não der certo, a mesma mensagem segue pelo WhatsApp ou pelo e-mail
       var plano_b = function () {
-        var gmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=murilok.andrade@gmail.com' +
-          '&su=' + encodeURIComponent('Mensagem pelo site da Localyze') + '&body=' + encodeURIComponent(texto);
         status.className = 'form-email__status form-email__status--opcoes';
         status.innerHTML = 'Escolha como enviar a sua mensagem (ela já vai escrita):' +
           '<span class="form-email__opcoes">' +
           '<a class="botao botao--azul" target="_blank" rel="noopener" href="' + linkZap(texto) + '">Enviar pelo WhatsApp</a>' +
-          '<a class="botao botao--linha" target="_blank" rel="noopener" href="' + gmail + '">Enviar pelo Gmail</a>' +
+          '<a class="botao botao--linha"' + (ehCelular ? '' : ' target="_blank" rel="noopener"') +
+          ' href="' + linkEmail('Mensagem pelo site da Localyze', texto) + '">Enviar pelo e-mail</a>' +
           '</span>';
       };
 
+      if (!chave) { plano_b(); return; }
+
+      status.className = 'form-email__status';
+      status.textContent = 'Enviando…';
+      enviar.disabled = true;
+      var dados = {
+        access_key: chave,
+        subject: 'Nova mensagem pelo site da Localyze',
+        from_name: 'Site da Localyze',
+        nome: nome,
+        contato: contato,
+        mensagem: mensagem
+      };
+      if (/@/.test(contato)) dados.email = contato; // permite responder direto
       var controle = window.AbortController ? new AbortController() : null;
       var limite = setTimeout(function () { if (controle) controle.abort(); }, 12000);
-      fetch('https://formsubmit.co/ajax/murilok.andrade@gmail.com', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(dados),
@@ -137,7 +161,7 @@
       })
         .then(function (r) { return r.json(); })
         .then(function (res) {
-          if (String(res.success) !== 'true') throw new Error(res.message || 'falhou');
+          if (!res || String(res.success) !== 'true') throw new Error((res && res.message) || 'falhou');
           formEmail.reset();
           status.className = 'form-email__status';
           status.textContent = 'Mensagem enviada! Vamos responder em breve.';

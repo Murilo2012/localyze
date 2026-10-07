@@ -362,8 +362,9 @@
           Enviar mensagem por e-mail
         </a>
 
-        <!-- Envia a mensagem direto para o e-mail pelo FormSubmit (formsubmit.co), sem precisar de app de e-mail. -->
-        <form class="form-email" id="form-email" action="https://formsubmit.co/murilok.andrade@gmail.com" method="post" hidden>
+        <!-- Envia a mensagem direto para o e-mail pelo Web3Forms (web3forms.com), sem precisar de app de e-mail.
+             A chave de acesso fica no campo "access_key" abaixo. Sem chave, o site oferece WhatsApp ou e-mail. -->
+        <form class="form-email" id="form-email" action="https://api.web3forms.com/submit" method="post" hidden>
           <p class="form-email__titulo">Mensagem por e-mail</p>
           <label class="campo">
             <span>Seu nome</span>
@@ -377,9 +378,10 @@
             <span>Mensagem</span>
             <textarea id="e-msg" name="mensagem" rows="4" required placeholder="Conte o que o seu negócio precisa."></textarea>
           </label>
-          <input type="text" name="_honey" class="form-email__isca" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="Nova mensagem pelo site da Localyze">
-          <input type="hidden" name="_template" value="table">
+          <input type="checkbox" name="botcheck" class="form-email__isca" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="access_key" id="e-chave" value="">
+          <input type="hidden" name="subject" value="Nova mensagem pelo site da Localyze">
+          <input type="hidden" name="from_name" value="Site da Localyze">
           <button class="botao botao--azul botao--largo" type="submit" id="e-enviar">Enviar mensagem</button>
           <p class="form-email__status" id="e-status" role="status" aria-live="polite"></p>
         </form>
