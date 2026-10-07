@@ -114,22 +114,36 @@
       status.className = 'form-email__status';
       status.textContent = 'Enviando…';
       enviar.disabled = true;
+      // se o envio direto falhar, a mesma mensagem segue pelo WhatsApp ou pelo Gmail
+      var texto = 'Olá, Localyze!\n\nNome: ' + dados.nome + '\nContato: ' + dados.contato + '\n\n' + dados.mensagem;
+      var plano_b = function () {
+        var gmail = 'https://mail.google.com/mail/?view=cm&fs=1&to=murilok.andrade@gmail.com' +
+          '&su=' + encodeURIComponent('Mensagem pelo site da Localyze') + '&body=' + encodeURIComponent(texto);
+        status.className = 'form-email__status form-email__status--opcoes';
+        status.innerHTML = 'Escolha como enviar a sua mensagem (ela já vai escrita):' +
+          '<span class="form-email__opcoes">' +
+          '<a class="botao botao--azul" target="_blank" rel="noopener" href="' + linkZap(texto) + '">Enviar pelo WhatsApp</a>' +
+          '<a class="botao botao--linha" target="_blank" rel="noopener" href="' + gmail + '">Enviar pelo Gmail</a>' +
+          '</span>';
+      };
+
+      var controle = window.AbortController ? new AbortController() : null;
+      var limite = setTimeout(function () { if (controle) controle.abort(); }, 12000);
       fetch('https://formsubmit.co/ajax/murilok.andrade@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(dados)
+        body: JSON.stringify(dados),
+        signal: controle ? controle.signal : undefined
       })
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (String(res.success) !== 'true') throw new Error(res.message || 'falhou');
           formEmail.reset();
+          status.className = 'form-email__status';
           status.textContent = 'Mensagem enviada! Vamos responder em breve.';
         })
-        .catch(function () {
-          status.className = 'form-email__status erro';
-          status.innerHTML = 'Não foi possível enviar agora. Tente de novo ou escreva para <a href="mailto:murilok.andrade@gmail.com">murilok.andrade@gmail.com</a>.';
-        })
-        .then(function () { enviar.disabled = false; });
+        .catch(plano_b)
+        .then(function () { clearTimeout(limite); enviar.disabled = false; });
     });
   }
 
