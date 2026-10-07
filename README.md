@@ -1,6 +1,7 @@
 # Localyze · site
 
-Site de foto e vídeo (Canoas e região). Só HTML, CSS e JavaScript: não precisa de build nem de servidor.
+Site da Localyze: vídeo, foto, sites e gestão de redes sociais para negócios de Canoas e região.
+Equipe: Murilo Andrade e Leonardo Luz. Só HTML, CSS e JavaScript: não precisa de build nem de servidor.
 
 ## Publicar no Cloudflare Pages (grátis)
 
@@ -14,8 +15,8 @@ Site de foto e vídeo (Canoas e região). Só HTML, CSS e JavaScript: não preci
    - **Build output directory:** deixe vazio (o site está na raiz)
 4. Salve. Em um ou dois minutos o site abre em `https://nome.pages.dev`.
 
-Depois de saber o endereço final, troque `localyze.pages.dev` no `index.html` (procure por ele,
-aparece 2 vezes) pelo endereço real. Isso faz a prévia do link aparecer certa no WhatsApp.
+O site está publicado em https://localyze.pages.dev/ e atualiza sozinho a cada envio para a `main`.
+Se um dia mudar o endereço, troque `localyze.pages.dev` no `index.html`.
 
 ## Onde mudar as coisas
 
@@ -23,14 +24,14 @@ aparece 2 vezes) pelo endereço real. Isso faz a prévia do link aparecer certa 
 |---|---|
 | Textos, serviços, perguntas | `index.html` |
 | Telefone do WhatsApp | `index.html` (links `wa.me/5551989006644`) e `script.js` (linha `var ZAP`) |
-| Cores | `style.css`, bloco `:root` no começo (`--azul` é o azul claro) |
+| Instagram | `index.html` (procure `localyze0`) |
+| Cores | `style.css`, bloco `:root` no começo (`--azul` é o azul de destaque, `--preto` o fundo) |
 | Fotos | pasta `img/` (formato `.webp`) |
-| Seção "Trabalhos" (desligada) | `index.html`, `<section id="trabalhos" hidden>`: apague `hidden` e coloque as fotos |
 | Imagem da prévia do link | `img/og.jpg` (1200 × 630) |
 
 ## O que o site faz
 
-- Tema claro (azul) e escuro, com botão para trocar; a escolha fica salva no aparelho.
+- Visual escuro (preto e azul-marinho) com azul vivo de destaque.
 - Todos os botões de WhatsApp já abrem com mensagem pronta; cada serviço tem a sua.
 - Formulário "Monte sua mensagem": junta nome, tipo de negócio e o que a pessoa precisa
   e abre o WhatsApp com tudo escrito. Não guarda nenhum dado.

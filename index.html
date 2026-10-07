@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Localyze · Foto e vídeo em Canoas e região</title>
-<meta name="description" content="Vídeo e foto para barbearias, consultórios, imobiliárias e eventos em Canoas e cidades próximas. Valores a combinar, orçamento pelo WhatsApp.">
-<meta name="theme-color" content="#9DD2F6">
-<meta name="color-scheme" content="light dark">
+<title>Localyze · Vídeo, foto, sites e redes sociais em Canoas</title>
+<meta name="description" content="Vídeo, foto, sites e gestão de redes sociais para negócios de Canoas e região. Pacotes sob medida, valores a combinar. Fale com a Localyze pelo WhatsApp.">
+<meta name="theme-color" content="#05080D">
+<meta name="color-scheme" content="dark">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
-<!-- Prévia do link no WhatsApp/Instagram. Quando tiver o endereço final, troque "localyze.pages.dev" abaixo. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Localyze">
-<meta property="og:title" content="Localyze · Foto e vídeo em Canoas e região">
-<meta property="og:description" content="Vídeo e foto para barbearias, consultórios, imobiliárias e eventos. Orçamento pelo WhatsApp.">
+<meta property="og:url" content="https://localyze.pages.dev/">
+<meta property="og:title" content="Localyze · Vídeo, foto, sites e redes sociais">
+<meta property="og:description" content="Seu negócio na tela de quem está perto. Canoas e região.">
 <meta property="og:image" content="https://localyze.pages.dev/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,17 +23,7 @@
 
 <link rel="preload" href="fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/barlow-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-
-<script>
-  // Aplica o tema salvo antes de desenhar a página (evita piscar).
-  (function () {
-    var d = document.documentElement;
-    d.classList.add('js');
-    try {
-      if (localStorage.getItem('localyze-tema') === 'escuro') d.setAttribute('data-tema', 'escuro');
-    } catch (e) {}
-  })();
-</script>
+<script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
@@ -41,12 +31,14 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Localyze",
-  "description": "Vídeo e foto para negócios em Canoas e região.",
+  "url": "https://localyze.pages.dev/",
+  "description": "Vídeo, foto, sites e gestão de redes sociais para negócios de Canoas e região.",
   "image": "https://localyze.pages.dev/img/og.jpg",
   "telephone": "+55 51 98900-6644",
   "email": "murilok.andrade@gmail.com",
   "areaServed": { "@type": "City", "name": "Canoas" },
-  "sameAs": ["https://www.instagram.com/murilok.andrade"]
+  "sameAs": ["https://www.instagram.com/localyze0"],
+  "founder": [{ "@type": "Person", "name": "Murilo Andrade" }, { "@type": "Person", "name": "Leonardo Luz" }]
 }
 </script>
 </head>
@@ -54,29 +46,36 @@
 <body>
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 
+<!-- símbolo da marca: alfinete de mapa com lente -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <clipPath id="lente"><circle cx="50" cy="50" r="29"/></clipPath>
+  </defs>
+  <symbol id="simbolo" viewBox="-3 -3 106 130">
+    <path d="M50 122 L15.89 74.50 A42 42 0 1 1 84.11 74.50 Z" fill="currentColor" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="50" cy="50" r="29" fill="var(--lente, #05080D)"/>
+    <path clip-path="url(#lente)" d="M50 38.5 L78.57 54.99 M59.96 44.25 L59.96 77.24 M59.96 55.75 L31.39 72.24 M50 61.5 L21.43 45.01 M40.04 55.75 L40.04 22.76 M40.04 44.25 L68.61 27.76" fill="none" stroke="currentColor" stroke-width="3"/>
+    <path d="M50 38.5 L59.96 44.25 L59.96 55.75 L50 61.5 L40.04 55.75 L40.04 44.25 Z" fill="currentColor"/>
+    <circle cx="53.6" cy="45.8" r="2.5" fill="var(--lente, #05080D)"/>
+  </symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.03-.2-.32A8.1 8.1 0 0 1 12.04 3.8Zm-3 3.6c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.5 2.5 1.08 3 .87 3.54.82.54-.05 1.74-.71 1.98-1.4.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.49-.5-.67-.5Z"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></symbol>
+</svg>
+
 <!-- ============ TOPO ============ -->
 <header class="topo" id="topo">
   <div class="wrap topo__in">
     <a class="marca" href="#inicio" aria-label="Localyze, voltar ao início">
-      <svg class="marca__icone" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true"><path d="M3 11V3h8M21 3h8v8M29 21v8h-8M11 29H3v-8" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="16" cy="16" r="4.5" fill="currentColor"/></svg>
+      <svg class="marca__simbolo" width="22" height="27" aria-hidden="true"><use href="#simbolo"/></svg>
       <span>Localyze</span>
     </a>
-
     <nav class="menu" aria-label="Seções do site">
       <a href="#servicos">Serviços</a>
-      <a href="#como">Como funciona</a>
-      <a href="#sobre">Sobre</a>
+      <a href="#pacotes">Pacotes</a>
+      <a href="#equipe">Equipe</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-
-    <div class="topo__acoes">
-      <button class="tema" type="button" id="tema" aria-pressed="false">
-        <svg class="tema__lua" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-        <svg class="tema__sol" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.6M12 18.9v2.6M2.5 12h2.6M18.9 12h2.6M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <span class="tema__txt">Escuro</span>
-      </button>
-      <a class="topo__zap" href="#contato">Contato</a>
-    </div>
+    <a class="topo__cta" href="#contato">Pedir orçamento</a>
   </div>
 </header>
 
@@ -84,51 +83,50 @@
 
   <!-- ============ ABERTURA ============ -->
   <section class="hero" id="inicio" aria-labelledby="hero-titulo">
-    <div class="wrap">
-      <p class="hero__linha">
-        <span>Foto e vídeo</span>
-        <span>Canoas e região · RS</span>
-      </p>
-
-      <p class="hero__marca" aria-hidden="true">Localyze</p>
-
-      <div class="hero__grade">
-        <div class="hero__texto">
-          <h1 id="hero-titulo">Seu negócio bem filmado e bem fotografado.</h1>
-          <p class="hero__sub">Vídeos e fotos para barbearias, consultórios, imobiliárias e eventos. Eu vou até o seu local, gravo, edito e entrego pronto para postar.</p>
-          <div class="acoes" id="hero-acoes">
-            <a class="botao botao--escuro" data-zap="Olá, Andrade! Vi a apresentação da Localyze e quero um orçamento." href="https://wa.me/5551989006644?text=Ol%C3%A1%2C%20Andrade!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Localyze%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
-              Pedir orçamento
-            </a>
-            <a class="botao botao--linha" href="#servicos">Ver serviços</a>
-          </div>
-          <p class="hero__preco">Valores a combinar</p>
+    <div class="wrap hero__grade">
+      <div class="hero__texto">
+        <p class="selo"><span class="selo__ponto" aria-hidden="true"></span>Canoas e região · RS</p>
+        <h1 id="hero-titulo">Seu negócio <mark>na tela</mark> de quem está perto.</h1>
+        <p class="hero__sub">Vídeo, foto, site e redes sociais para negócios de Canoas e região. A gente cuida de como o seu negócio aparece, do primeiro vídeo ao post de toda semana.</p>
+        <div class="acoes" id="hero-acoes">
+          <a class="botao botao--azul" data-zap="Olá, Localyze! Vi a apresentação de vocês e quero um orçamento." href="https://wa.me/5551989006644" target="_blank" rel="noopener">
+            <svg width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
+            Pedir orçamento
+          </a>
+          <a class="botao botao--linha" href="#servicos">Ver serviços</a>
         </div>
+        <ul class="hero__lista" aria-label="O que fazemos">
+          <li>Vídeo</li><li>Foto</li><li>Sites</li><li>Redes sociais</li>
+        </ul>
+      </div>
 
-        <figure class="visor">
-          <div class="visor__quadro">
-            <img src="img/andrade-retrato-960.webp"
-                 srcset="img/andrade-retrato-640.webp 640w, img/andrade-retrato-960.webp 960w, img/andrade-retrato-1280.webp 1280w"
-                 sizes="(min-width: 900px) 420px, (min-width: 600px) 60vw, 90vw"
-                 width="960" height="1440" fetchpriority="high"
-                 alt="Andrade, da Localyze, segurando a câmera e conferindo o visor">
-            <div class="visor__hud" aria-hidden="true">
-              <span class="visor__rec"><i></i>REC <b id="timecode">00:00:00:00</b></span>
-              <span class="visor__bat"><i></i></span>
-              <span class="visor__local">Canoas · RS</span>
-            </div>
+      <div class="hero__fotos" aria-label="A equipe da Localyze trabalhando">
+        <figure class="quadro quadro--a">
+          <img src="img/andrade-camera-960.webp"
+               srcset="img/andrade-camera-640.webp 640w, img/andrade-camera-960.webp 960w, img/andrade-camera-1400.webp 1400w"
+               sizes="(min-width: 960px) 420px, 80vw" width="960" height="768" fetchpriority="high"
+               alt="Murilo Andrade fotografando durante um evento">
+          <div class="quadro__hud" aria-hidden="true">
+            <span class="hud-rec"><i></i>REC <b id="timecode">00:00:00:00</b></span>
           </div>
+          <figcaption>Murilo Andrade</figcaption>
+        </figure>
+        <figure class="quadro quadro--b">
+          <img src="img/leonardo-sites-960.webp"
+               srcset="img/leonardo-sites-640.webp 640w, img/leonardo-sites-960.webp 960w, img/leonardo-sites-1400.webp 1400w"
+               sizes="(min-width: 960px) 400px, 80vw" width="960" height="642" fetchpriority="high"
+               alt="Leonardo Luz trabalhando no computador e no celular">
+          <figcaption>Leonardo Luz</figcaption>
         </figure>
       </div>
     </div>
   </section>
 
-  <!-- faixa rolando -->
+  <!-- faixa -->
   <div class="faixa" aria-hidden="true">
     <div class="faixa__trilho">
-      <span>Barbearias</span><span>Consultórios</span><span>Imobiliárias</span><span>Eventos</span><span>Fotos de tudo</span><span>Reels e TikTok</span>
-      <span>Barbearias</span><span>Consultórios</span><span>Imobiliárias</span><span>Eventos</span><span>Fotos de tudo</span><span>Reels e TikTok</span>
+      <span>Vídeo</span><span>Foto</span><span>Sites</span><span>Redes sociais</span><span>Campanhas</span><span>Canoas e região</span>
+      <span>Vídeo</span><span>Foto</span><span>Sites</span><span>Redes sociais</span><span>Campanhas</span><span>Canoas e região</span>
     </div>
   </div>
 
@@ -136,169 +134,203 @@
   <section class="secao" id="servicos" aria-labelledby="servicos-titulo">
     <div class="wrap">
       <header class="cab revela">
-        <p class="cena">Cena 01 <span>Serviços</span></p>
-        <h2 id="servicos-titulo">O que eu faço</h2>
-        <p class="cab__intro">Cada negócio pede uma imagem diferente. Esses são os trabalhos que eu mais faço. Se o seu não estiver aqui, me chama mesmo assim.</p>
+        <p class="rotulo">O que fazemos</p>
+        <h2 id="servicos-titulo">Quatro jeitos de fazer <span class="destaque">o seu negócio aparecer</span></h2>
+        <p class="cab__intro">Dá para contratar um serviço só ou juntar tudo num pacote. Atendemos barbearias, consultórios, imobiliárias, eventos e todo tipo de comércio.</p>
       </header>
 
-      <ol class="servicos">
-        <li class="servico revela">
-          <span class="servico__n">01</span>
-          <div class="servico__corpo">
-            <h3>Barbearias</h3>
-            <p>Vídeos curtos do corte, da barba e do ambiente, feitos para Reels e TikTok. Fotos do espaço e da equipe.</p>
-            <ul class="tags"><li>Reels</li><li>TikTok</li><li>Fotos do espaço</li></ul>
+      <div class="servicos">
+        <article class="servico revela">
+          <div class="servico__topo">
+            <span class="servico__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><rect x="2.5" y="6" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 10.5 21.5 7v10l-6-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Vídeo</h3>
           </div>
-          <a class="servico__link" data-zap="Olá, Andrade! Quero um orçamento de foto/vídeo para a minha barbearia." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span><span class="sr"> para barbearia</span></a>
-        </li>
-        <li class="servico revela">
-          <span class="servico__n">02</span>
-          <div class="servico__corpo">
-            <h3>Consultórios</h3>
-            <p>Vídeo de apresentação do consultório e dos profissionais. Fotos que passam confiança antes da primeira consulta.</p>
-            <ul class="tags"><li>Apresentação</li><li>Retrato da equipe</li><li>Ambiente</li></ul>
-          </div>
-          <a class="servico__link" data-zap="Olá, Andrade! Quero um orçamento de foto/vídeo para o meu consultório." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span><span class="sr"> para consultório</span></a>
-        </li>
-        <li class="servico revela">
-          <span class="servico__n">03</span>
-          <div class="servico__corpo">
-            <h3>Imobiliárias</h3>
-            <p>Fotos e vídeo de imóveis para anúncio e redes sociais, mostrando cada ambiente de um jeito fácil de entender.</p>
-            <ul class="tags"><li>Fotos para anúncio</li><li>Tour em vídeo</li></ul>
-          </div>
-          <a class="servico__link" data-zap="Olá, Andrade! Quero um orçamento de foto/vídeo de imóveis." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span><span class="sr"> para imobiliária</span></a>
-        </li>
-        <li class="servico revela">
-          <span class="servico__n">04</span>
-          <div class="servico__corpo">
-            <h3>Eventos</h3>
-            <p>Cobertura em foto e vídeo de aniversários, inaugurações e eventos de empresa. Da chegada ao último momento.</p>
-            <ul class="tags"><li>Fotos</li><li>Vídeo resumo</li></ul>
-          </div>
-          <a class="servico__link" data-zap="Olá, Andrade! Quero um orçamento de foto/vídeo para um evento." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span><span class="sr"> para evento</span></a>
-        </li>
-        <li class="servico revela">
-          <span class="servico__n">05</span>
-          <div class="servico__corpo">
-            <h3>Fotos de tudo</h3>
-            <p>Produto, vitrine, comida, retrato, rua. Se dá para fotografar, vale conversar.</p>
-            <ul class="tags"><li>Produto</li><li>Retrato</li><li>Comércio</li></ul>
-          </div>
-          <a class="servico__link" data-zap="Olá, Andrade! Quero um orçamento de fotos." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Pedir orçamento <span aria-hidden="true">→</span><span class="sr"> de fotos</span></a>
-        </li>
-      </ol>
+          <p>Reels, TikTok e vídeos de apresentação. Gravamos no seu local e entregamos editado, pronto para postar.</p>
+          <ul class="itens">
+            <li>Reels e TikTok</li>
+            <li>Vídeo de apresentação do negócio</li>
+            <li>Cobertura de eventos</li>
+            <li>Tour em vídeo de imóveis</li>
+          </ul>
+          <a class="servico__link" data-zap="Olá, Localyze! Quero um orçamento de vídeo." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Orçamento de vídeo <span aria-hidden="true">→</span></a>
+        </article>
 
-      <p class="aviso revela"><strong>Valores a combinar.</strong> O preço depende do tipo de trabalho, do tempo de gravação e de quanto material você precisa.</p>
-    </div>
-  </section>
+        <article class="servico revela">
+          <div class="servico__topo">
+            <span class="servico__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h2l1.5-2h6l1.5 2h2A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.8" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <h3>Foto</h3>
+          </div>
+          <p>Fotos do espaço, da equipe, dos produtos e dos eventos. Imagem boa para o Instagram, para o Google e para o site.</p>
+          <ul class="itens">
+            <li>Ambiente e equipe</li>
+            <li>Produto e vitrine</li>
+            <li>Imóveis para anúncio</li>
+            <li>Eventos</li>
+          </ul>
+          <a class="servico__link" data-zap="Olá, Localyze! Quero um orçamento de fotos." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Orçamento de foto <span aria-hidden="true">→</span></a>
+        </article>
 
-  <!-- ============ COMO FUNCIONA ============ -->
-  <section class="secao secao--filme" id="como" aria-labelledby="como-titulo">
-    <div class="wrap">
-      <header class="cab revela">
-        <p class="cena">Cena 02 <span>Como funciona</span></p>
-        <h2 id="como-titulo">Do primeiro contato à entrega</h2>
-      </header>
+        <article class="servico revela">
+          <div class="servico__topo">
+            <span class="servico__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><rect x="2.5" y="4" width="19" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 18v3M9 9.5 7 11l2 1.5M15 9.5l2 1.5-2 1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Sites</h3>
+          </div>
+          <p>Um site para o seu negócio ser encontrado. Abre rápido no celular e mostra o que o cliente precisa saber, com botão direto para o seu WhatsApp.</p>
+          <ul class="itens">
+            <li>Site de apresentação do negócio</li>
+            <li>Serviços, cardápio ou catálogo</li>
+            <li>Botão de WhatsApp e localização</li>
+            <li>Feito para celular</li>
+          </ul>
+          <p class="servico__prova">Este site que você está vendo foi feito por nós.</p>
+          <a class="servico__link" data-zap="Olá, Localyze! Quero um orçamento de site para o meu negócio." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Orçamento de site <span aria-hidden="true">→</span></a>
+        </article>
 
-      <ol class="passos">
-        <li class="revela">
-          <span class="passos__n">1</span>
-          <h3>Conversa</h3>
-          <p>Você me chama no WhatsApp e conta o que precisa. Se quiser, manda exemplos de vídeos que você gosta.</p>
-        </li>
-        <li class="revela">
-          <span class="passos__n">2</span>
-          <h3>Orçamento</h3>
-          <p>Eu passo o valor e a gente combina o que vai ser gravado.</p>
-        </li>
-        <li class="revela">
-          <span class="passos__n">3</span>
-          <h3>Gravação</h3>
-          <p>Marcamos dia e horário e eu vou até o seu local com o equipamento.</p>
-        </li>
-        <li class="revela">
-          <span class="passos__n">4</span>
-          <h3>Entrega</h3>
-          <p>Você recebe o material editado, pronto para usar e postar.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!--
-    ============ TRABALHOS (desligado) ============
-    Quando tiver fotos de clientes liberadas:
-      1. apague a palavra "hidden" da <section> abaixo;
-      2. coloque as imagens na pasta img/ e dentro de .galeria;
-      3. se quiser, adicione <a href="#trabalhos">Trabalhos</a> no menu do topo.
-  -->
-  <section class="secao" id="trabalhos" aria-labelledby="trabalhos-titulo" hidden>
-    <div class="wrap">
-      <header class="cab">
-        <p class="cena">Extra <span>Trabalhos</span></p>
-        <h2 id="trabalhos-titulo">Alguns trabalhos</h2>
-      </header>
-      <div class="galeria">
-        <!-- <img src="img/trabalho-01.webp" alt="Descreva a foto aqui" loading="lazy" width="800" height="1000"> -->
+        <article class="servico servico--destaque revela">
+          <div class="servico__topo">
+            <span class="servico__icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><use href="#i-insta"/></svg>
+            </span>
+            <h3>Redes sociais</h3>
+            <span class="etiqueta">Mensal ou anual</span>
+          </div>
+          <p>Cuidamos do Instagram do seu negócio. Planejamos, criamos, postamos e mostramos o que deu resultado. Também trazemos ideias de campanha e divulgação.</p>
+          <ul class="itens">
+            <li>Planejamento das postagens</li>
+            <li>Legendas e publicação</li>
+            <li>Ideias de campanhas e divulgação</li>
+            <li>Resposta a mensagens</li>
+            <li>Relatório de resultados</li>
+          </ul>
+          <a class="servico__link" data-zap="Olá, Localyze! Quero saber sobre a gestão de redes sociais." href="https://wa.me/5551989006644" target="_blank" rel="noopener">Quero gestão de redes <span aria-hidden="true">→</span></a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ SOBRE ============ -->
-  <section class="secao" id="sobre" aria-labelledby="sobre-titulo">
-    <div class="wrap sobre">
-      <figure class="sobre__foto revela">
-        <img src="img/andrade-camera-960.webp"
-             srcset="img/andrade-camera-640.webp 640w, img/andrade-camera-960.webp 960w, img/andrade-camera-1400.webp 1400w"
-             sizes="(min-width: 900px) 540px, 90vw"
-             width="960" height="768" loading="lazy" decoding="async"
-             alt="Andrade de costas, fotografando durante um evento">
-      </figure>
+  <!-- ============ PACOTES ============ -->
+  <section class="secao secao--pacote" id="pacotes" aria-labelledby="pacotes-titulo">
+    <div class="wrap pacote">
+      <div class="pacote__texto revela">
+        <p class="rotulo">Pacotes</p>
+        <h2 id="pacotes-titulo">Tudo junto, <span class="destaque">com uma equipe só</span></h2>
+        <p>Junte os serviços num pacote do jeito que o seu negócio precisa. A gente filma, fotografa, monta o site e cuida das redes, e você fala com as mesmas pessoas do começo ao fim.</p>
+        <p class="pacote__preco"><strong>Valores a combinar.</strong> Montamos a proposta depois de entender o seu negócio.</p>
+        <a class="botao botao--azul" data-zap="Olá, Localyze! Quero montar um pacote para o meu negócio." href="https://wa.me/5551989006644" target="_blank" rel="noopener">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
+          Montar meu pacote
+        </a>
+      </div>
 
-      <div class="sobre__texto revela">
-        <p class="cena">Cena 03 <span>Sobre</span></p>
-        <h2 id="sobre-titulo">Prazer, Andrade.</h2>
-        <p>Me chamo Murilo Andrade, mas quase todo mundo me chama de Andrade. Faço vídeo e foto para negócios de Canoas e das cidades vizinhas.</p>
-        <p>Meu trabalho é ir até o seu local, entender o que o seu negócio tem de melhor e mostrar isso na câmera. Pode ser um visual mais cinematográfico, com clima de filme, ou algo leve e natural. Depende da ocasião, e a gente decide junto.</p>
-
-        <div class="claquete" aria-label="Ficha da Localyze">
-          <div class="claquete__barra" aria-hidden="true"></div>
-          <dl>
-            <div><dt>Produção</dt><dd>Localyze</dd></div>
-            <div><dt>Câmera</dt><dd>Andrade</dd></div>
-            <div><dt>Local</dt><dd>Canoas · RS</dd></div>
-            <div><dt>Cena</dt><dd>O seu negócio</dd></div>
-          </dl>
+      <div class="combo revela" aria-hidden="true">
+        <div class="combo__peca">Vídeo</div>
+        <span class="combo__mais">+</span>
+        <div class="combo__peca">Foto</div>
+        <span class="combo__mais">+</span>
+        <div class="combo__peca">Site</div>
+        <span class="combo__mais">+</span>
+        <div class="combo__peca">Redes</div>
+        <span class="combo__igual">=</span>
+        <div class="combo__peca combo__peca--final">
+          <svg width="30" height="37"><use href="#simbolo"/></svg>
+          Seu negócio aparecendo
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ============ COMO TRABALHAMOS ============ -->
+  <section class="secao" id="como" aria-labelledby="como-titulo">
+    <div class="wrap">
+      <header class="cab revela">
+        <p class="rotulo">Como trabalhamos</p>
+        <h2 id="como-titulo">Do primeiro contato ao resultado</h2>
+      </header>
+      <ol class="passos">
+        <li class="revela">
+          <span class="passos__n">01</span>
+          <h3>Conversa</h3>
+          <p>Você chama a gente no WhatsApp ou passamos no seu negócio para entender o que você precisa.</p>
+        </li>
+        <li class="revela">
+          <span class="passos__n">02</span>
+          <h3>Proposta</h3>
+          <p>Montamos um pacote sob medida e combinamos o valor.</p>
+        </li>
+        <li class="revela">
+          <span class="passos__n">03</span>
+          <h3>Produção</h3>
+          <p>Gravamos, fotografamos, montamos o site e planejamos as postagens.</p>
+        </li>
+        <li class="revela">
+          <span class="passos__n">04</span>
+          <h3>Entrega e acompanhamento</h3>
+          <p>Você recebe tudo pronto. Nas redes sociais, seguimos com você todo mês, com relatório.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ EQUIPE ============ -->
+  <section class="secao secao--equipe" id="equipe" aria-labelledby="equipe-titulo">
+    <div class="wrap equipe">
+      <div class="equipe__texto revela">
+        <p class="rotulo">Equipe</p>
+        <h2 id="equipe-titulo">Quem faz a <span class="destaque">Localyze</span></h2>
+        <p>Somos o Murilo Andrade, o Andrade, e o Leonardo Luz. Ficamos por Canoas e atendemos negócios da cidade e das cidades vizinhas, indo até você sempre que precisar.</p>
+        <p>Trabalhamos juntos em tudo: cada vídeo, foto, site e post passa pelos dois. Assim o seu negócio tem uma imagem só, igual em todo lugar onde aparece.</p>
+      </div>
+
+      <ul class="nomes revela">
+        <li>
+          <span class="nomes__inicial" aria-hidden="true">MA</span>
+          <strong>Murilo Andrade</strong>
+        </li>
+        <li>
+          <span class="nomes__inicial" aria-hidden="true">LL</span>
+          <strong>Leonardo Luz</strong>
+        </li>
+        <li class="nomes__base">
+          <svg width="18" height="22" aria-hidden="true"><use href="#simbolo"/></svg>
+          <span>Base em Canoas · RS</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ============ DÚVIDAS ============ -->
-  <section class="secao secao--tom" id="duvidas" aria-labelledby="duvidas-titulo">
+  <section class="secao" id="duvidas" aria-labelledby="duvidas-titulo">
     <div class="wrap duvidas">
       <header class="cab revela">
-        <p class="cena">Cena 04 <span>Dúvidas</span></p>
+        <p class="rotulo">Dúvidas</p>
         <h2 id="duvidas-titulo">Perguntas comuns</h2>
       </header>
-
       <div class="perguntas revela">
         <details>
           <summary>Quanto custa?</summary>
-          <p>Valores a combinar. Depende do tipo de trabalho, do tempo de gravação e de quanto material você precisa. Me chama no WhatsApp que eu passo o orçamento.</p>
+          <p>Valores a combinar. O preço depende dos serviços, do tamanho do trabalho e de quanto material você precisa. Chama a gente no WhatsApp que montamos a proposta.</p>
         </details>
         <details>
-          <summary>Você vai até o meu local?</summary>
-          <p>Sim. Atendo Canoas e cidades próximas. Se você estiver um pouco mais longe, me chama que a gente vê.</p>
+          <summary>Posso contratar só um serviço?</summary>
+          <p>Pode. Dá para fazer só um vídeo, só as fotos, só o site ou só a gestão das redes. E se quiser juntar mais de um, montamos um pacote.</p>
         </details>
         <details>
-          <summary>O vídeo sai pronto para o Instagram?</summary>
-          <p>Sim. Gravo na vertical para Reels, TikTok e Stories, ou na horizontal se for para outro uso.</p>
+          <summary>Como funciona a gestão de redes sociais?</summary>
+          <p>É um plano mensal ou anual. Planejamos as postagens, escrevemos as legendas, publicamos, respondemos mensagens, trazemos ideias de campanha e mostramos os resultados num relatório.</p>
         </details>
         <details>
-          <summary>Que estilo de vídeo e foto você faz?</summary>
-          <p>Depende da ocasião. Pode ser mais cinematográfico ou mais leve e natural. A gente conversa antes e escolhe o que combina com o seu negócio.</p>
+          <summary>Vocês vão até o meu negócio?</summary>
+          <p>Sim. Ficamos por Canoas e atendemos a cidade e as cidades próximas. Se você estiver um pouco mais longe, chama a gente que vemos.</p>
+        </details>
+        <details>
+          <summary>Que estilo de vídeo e foto vocês fazem?</summary>
+          <p>Depende da ocasião. Pode ser mais cinematográfico ou mais leve e natural. Conversamos antes e escolhemos o que combina com o seu negócio.</p>
         </details>
       </div>
     </div>
@@ -308,18 +340,17 @@
   <section class="secao secao--contato" id="contato" aria-labelledby="contato-titulo">
     <div class="wrap contato">
       <div class="contato__intro revela">
-        <p class="cena">Cena 05 <span>Contato</span></p>
-        <h2 id="contato-titulo">Vamos conversar?</h2>
+        <p class="rotulo">Contato</p>
+        <h2 id="contato-titulo">Bora colocar o seu negócio <span class="destaque">na tela?</span></h2>
         <p>O jeito mais rápido é o WhatsApp. Preencha ao lado e a mensagem já vai pronta.</p>
-
         <ul class="canais">
           <li>
             <span>WhatsApp</span>
-            <a data-zap="Olá, Andrade! Vi a apresentação da Localyze e quero um orçamento." href="https://wa.me/5551989006644" target="_blank" rel="noopener">(51) 98900-6644</a>
+            <a data-zap="Olá, Localyze! Vi a apresentação de vocês e quero um orçamento." href="https://wa.me/5551989006644" target="_blank" rel="noopener">(51) 98900-6644</a>
           </li>
           <li>
             <span>Instagram</span>
-            <a href="https://www.instagram.com/murilok.andrade" target="_blank" rel="noopener">@murilok.andrade</a>
+            <a href="https://www.instagram.com/localyze0" target="_blank" rel="noopener">@localyze0</a>
           </li>
           <li>
             <span>E-mail</span>
@@ -328,7 +359,7 @@
         </ul>
       </div>
 
-      <!-- Sem JavaScript, o formulário ainda funciona: envia só o campo "text" para o WhatsApp. -->
+      <!-- Sem JavaScript, o formulário ainda abre o WhatsApp com o campo "text". -->
       <form class="pedido revela" id="pedido" action="https://wa.me/5551989006644" method="get" target="_blank">
         <p class="pedido__titulo">Monte sua mensagem</p>
 
@@ -343,31 +374,34 @@
         </label>
 
         <fieldset class="campo">
-          <legend>Que tipo de negócio?</legend>
+          <legend>O que você precisa? <em>(pode marcar mais de um)</em></legend>
           <div class="chips">
-            <label><input type="radio" name="tipo" value="barbearia"><span>Barbearia</span></label>
-            <label><input type="radio" name="tipo" value="consultório"><span>Consultório</span></label>
-            <label><input type="radio" name="tipo" value="imobiliária"><span>Imobiliária</span></label>
-            <label><input type="radio" name="tipo" value="evento"><span>Evento</span></label>
-            <label><input type="radio" name="tipo" value="outro"><span>Outro</span></label>
+            <label><input type="checkbox" name="precisa" value="vídeo"><span>Vídeo</span></label>
+            <label><input type="checkbox" name="precisa" value="foto"><span>Foto</span></label>
+            <label><input type="checkbox" name="precisa" value="site"><span>Site</span></label>
+            <label><input type="checkbox" name="precisa" value="gestão de redes sociais"><span>Redes sociais</span></label>
           </div>
         </fieldset>
 
         <fieldset class="campo">
-          <legend>O que você precisa?</legend>
+          <legend>Que tipo de negócio?</legend>
           <div class="chips">
-            <label><input type="checkbox" name="precisa" value="vídeo"><span>Vídeo</span></label>
-            <label><input type="checkbox" name="precisa" value="foto"><span>Foto</span></label>
+            <label><input type="radio" name="tipo" value="uma barbearia"><span>Barbearia</span></label>
+            <label><input type="radio" name="tipo" value="um consultório"><span>Consultório</span></label>
+            <label><input type="radio" name="tipo" value="uma imobiliária"><span>Imobiliária</span></label>
+            <label><input type="radio" name="tipo" value="um evento"><span>Evento</span></label>
+            <label><input type="radio" name="tipo" value="um comércio"><span>Comércio</span></label>
+            <label><input type="radio" name="tipo" value=""><span>Outro</span></label>
           </div>
         </fieldset>
 
         <label class="campo">
           <span>Quer contar mais alguma coisa? <em>(opcional)</em></span>
-          <textarea name="text" id="p-msg" rows="3" placeholder="Ex.: Quero vídeos para o Instagram da barbearia."></textarea>
+          <textarea name="text" id="p-msg" rows="3" placeholder="Ex.: Quero vídeos e alguém para cuidar do Instagram."></textarea>
         </label>
 
-        <button class="botao botao--escuro botao--largo" type="submit">
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
+        <button class="botao botao--azul botao--largo" type="submit">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
           Enviar pelo WhatsApp
         </button>
       </form>
@@ -378,25 +412,23 @@
 <!-- ============ RODAPÉ ============ -->
 <footer class="rodape">
   <div class="wrap rodape__in">
-    <p class="rodape__marca">Localyze</p>
-    <p>Foto e vídeo em Canoas e região</p>
-    <p><a href="https://www.instagram.com/murilok.andrade" target="_blank" rel="noopener">@murilok.andrade</a></p>
+    <a class="marca marca--rodape" href="#inicio" aria-label="Localyze, voltar ao início">
+      <svg class="marca__simbolo" width="22" height="27" aria-hidden="true"><use href="#simbolo"/></svg>
+      <span>Localyze</span>
+    </a>
+    <p>Vídeo, foto, sites e redes sociais · Canoas e região</p>
+    <p><a href="https://www.instagram.com/localyze0" target="_blank" rel="noopener">@localyze0</a></p>
     <p>© <span id="ano">2026</span> Localyze</p>
   </div>
 </footer>
 
 <!-- Botão fixo no celular -->
 <div class="barra" id="barra">
-  <a class="botao botao--azul" data-zap="Olá, Andrade! Vi a apresentação da Localyze e quero um orçamento." href="https://wa.me/5551989006644?text=Ol%C3%A1%2C%20Andrade!%20Vi%20a%20apresenta%C3%A7%C3%A3o%20da%20Localyze%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
+  <a class="botao botao--azul" data-zap="Olá, Localyze! Vi a apresentação de vocês e quero um orçamento." href="https://wa.me/5551989006644" target="_blank" rel="noopener">
+    <svg width="20" height="20" aria-hidden="true"><use href="#i-zap"/></svg>
     Chamar no WhatsApp
   </a>
 </div>
-
-<!-- ícones -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.18-3.1.82.83-3.03-.2-.32A8.1 8.1 0 0 1 12.04 3.8Zm-3 3.6c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.1 4.5 2.5 1.08 3 .87 3.54.82.54-.05 1.74-.71 1.98-1.4.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35-.3-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.49-.5-.67-.5Z"/></symbol>
-</svg>
 
 <script src="script.js" defer></script>
 </body>

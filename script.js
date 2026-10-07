@@ -2,46 +2,24 @@
   'use strict';
 
   var ZAP = '5551989006644';
-  var raiz = document.documentElement;
   var semMovimento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function linkZap(texto) {
     return 'https://wa.me/' + ZAP + (texto ? '?text=' + encodeURIComponent(texto) : '');
   }
 
-  // ---------- tema claro / escuro ----------
-  var botaoTema = document.getElementById('tema');
-  var textoTema = botaoTema.querySelector('.tema__txt');
-  var corTopo = document.querySelector('meta[name="theme-color"]');
-
-  function aplicarTema(escuro) {
-    if (escuro) raiz.setAttribute('data-tema', 'escuro');
-    else raiz.removeAttribute('data-tema');
-    botaoTema.setAttribute('aria-pressed', String(escuro));
-    botaoTema.setAttribute('aria-label', escuro ? 'Mudar para o tema claro' : 'Mudar para o tema escuro');
-    textoTema.textContent = escuro ? 'Claro' : 'Escuro';
-    if (corTopo) corTopo.setAttribute('content', escuro ? '#0B1C2A' : '#9DD2F6');
-  }
-  aplicarTema(raiz.getAttribute('data-tema') === 'escuro');
-
-  botaoTema.addEventListener('click', function () {
-    var escuro = raiz.getAttribute('data-tema') !== 'escuro';
-    aplicarTema(escuro);
-    try { localStorage.setItem('localyze-tema', escuro ? 'escuro' : 'claro'); } catch (e) {}
-  });
-
   // ---------- links de WhatsApp com mensagem pronta ----------
   document.querySelectorAll('[data-zap]').forEach(function (a) {
     a.href = linkZap(a.getAttribute('data-zap'));
   });
 
-  // ---------- timecode do visor (00:00:00:00, 25 quadros/s) ----------
+  // ---------- timecode da foto (00:00:00:00, 25 quadros/s) ----------
   var tc = document.getElementById('timecode');
   if (tc && !semMovimento) {
     var inicio = performance.now();
     var dois = function (n) { return (n < 10 ? '0' : '') + n; };
     setInterval(function () {
-      var q = Math.floor((performance.now() - inicio) / 40); // 40 ms = 1 quadro
+      var q = Math.floor((performance.now() - inicio) / 40);
       var s = Math.floor(q / 25);
       tc.textContent = dois(Math.floor(s / 3600)) + ':' + dois(Math.floor(s / 60) % 60) + ':' + dois(s % 60) + ':' + dois(q % 25);
     }, 40);
@@ -74,7 +52,6 @@
     var heroVisivel = true, contatoVisivel = false;
     var atualizar = function () { barra.classList.toggle('mostrar', !heroVisivel && !contatoVisivel); };
     new IntersectionObserver(function (e) {
-      // conta como "visível" também quando ainda está abaixo da tela
       heroVisivel = e[0].isIntersecting || e[0].boundingClientRect.top > 0;
       atualizar();
     }).observe(heroAcoes);
@@ -82,6 +59,11 @@
   }
 
   // ---------- formulário: monta a mensagem e abre o WhatsApp ----------
+  function juntar(lista) {
+    if (lista.length < 2) return lista.join('');
+    return lista.slice(0, -1).join(', ') + ' e ' + lista[lista.length - 1];
+  }
+
   var form = document.getElementById('pedido');
   if (form) {
     form.addEventListener('submit', function (ev) {
@@ -93,11 +75,11 @@
       var tipo = form.querySelector('input[name="tipo"]:checked');
       var precisa = Array.prototype.map.call(form.querySelectorAll('input[name="precisa"]:checked'), function (i) { return i.value; });
 
-      var linhas = ['Olá, Andrade! Vi a apresentação da Localyze e quero um orçamento.'];
+      var linhas = ['Olá, Localyze! Vi a apresentação de vocês e quero um orçamento.'];
       if (nome) linhas.push('Meu nome é ' + nome + '.');
-      if (tipo && tipo.value !== 'outro') linhas.push('Tenho ' + (tipo.value === 'evento' ? 'um evento' : (tipo.value === 'barbearia' || tipo.value === 'imobiliária' ? 'uma ' : 'um ') + tipo.value) + (negocio ? ': ' + negocio : '') + '.');
+      if (tipo && tipo.value) linhas.push('Tenho ' + tipo.value + (negocio ? ': ' + negocio : '') + '.');
       else if (negocio) linhas.push('Meu negócio: ' + negocio + '.');
-      if (precisa.length) linhas.push('Preciso de ' + precisa.join(' e ') + '.');
+      if (precisa.length) linhas.push('Tenho interesse em: ' + juntar(precisa) + '.');
       if (extra) linhas.push(extra);
 
       var url = linkZap(linhas.join('\n'));
