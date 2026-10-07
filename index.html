@@ -361,6 +361,28 @@
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
           Enviar mensagem por e-mail
         </a>
+
+        <!-- Envia a mensagem direto para o e-mail pelo FormSubmit (formsubmit.co), sem precisar de app de e-mail. -->
+        <form class="form-email" id="form-email" action="https://formsubmit.co/murilok.andrade@gmail.com" method="post" hidden>
+          <p class="form-email__titulo">Mensagem por e-mail</p>
+          <label class="campo">
+            <span>Seu nome</span>
+            <input type="text" id="e-nome" name="nome" autocomplete="name" required>
+          </label>
+          <label class="campo">
+            <span>Seu e-mail ou WhatsApp <em>(para respondermos)</em></span>
+            <input type="text" id="e-contato" name="contato" autocomplete="email" required>
+          </label>
+          <label class="campo">
+            <span>Mensagem</span>
+            <textarea id="e-msg" name="mensagem" rows="4" required placeholder="Conte o que o seu negócio precisa."></textarea>
+          </label>
+          <input type="text" name="_honey" class="form-email__isca" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="_subject" value="Nova mensagem pelo site da Localyze">
+          <input type="hidden" name="_template" value="table">
+          <button class="botao botao--azul botao--largo" type="submit" id="e-enviar">Enviar mensagem</button>
+          <p class="form-email__status" id="e-status" role="status" aria-live="polite"></p>
+        </form>
       </div>
 
       <!-- Sem JavaScript, o formulário ainda abre o WhatsApp com o campo "text". -->

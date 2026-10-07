@@ -90,6 +90,49 @@
     });
   }
 
+  // ---------- mensagem por e-mail (direto pelo site, via FormSubmit) ----------
+  var botaoEmail = document.querySelector('.botao--email');
+  var formEmail = document.getElementById('form-email');
+  if (botaoEmail && formEmail && window.fetch) {
+    botaoEmail.setAttribute('aria-expanded', 'false');
+    botaoEmail.setAttribute('aria-controls', 'form-email');
+    botaoEmail.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      var abrir = formEmail.hidden;
+      formEmail.hidden = !abrir;
+      botaoEmail.setAttribute('aria-expanded', String(abrir));
+      if (abrir) document.getElementById('e-nome').focus();
+    });
+
+    var status = document.getElementById('e-status');
+    var enviar = document.getElementById('e-enviar');
+    formEmail.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var dados = {};
+      new FormData(formEmail).forEach(function (v, k) { dados[k] = v; });
+      if (dados._honey) return; // robô de spam
+      status.className = 'form-email__status';
+      status.textContent = 'Enviando…';
+      enviar.disabled = true;
+      fetch('https://formsubmit.co/ajax/murilok.andrade@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(dados)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (String(res.success) !== 'true') throw new Error(res.message || 'falhou');
+          formEmail.reset();
+          status.textContent = 'Mensagem enviada! Vamos responder em breve.';
+        })
+        .catch(function () {
+          status.className = 'form-email__status erro';
+          status.innerHTML = 'Não foi possível enviar agora. Tente de novo ou escreva para <a href="mailto:murilok.andrade@gmail.com">murilok.andrade@gmail.com</a>.';
+        })
+        .then(function () { enviar.disabled = false; });
+    });
+  }
+
   // ---------- ano no rodapé ----------
   var ano = document.getElementById('ano');
   if (ano) ano.textContent = String(new Date().getFullYear());
